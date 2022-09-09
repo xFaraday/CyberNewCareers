@@ -1,0 +1,10 @@
+make sure to change permissions on elasticsearch directory 
+
+original:
+sudo mkdir -p /data/elasticsearch/data && sudo chown -R 1000:1000 /data/elasticsearch
+
+Modified:
+sudo mkdir -p ./data/elasticsearch/data && sudo chown -R 1000:1000 ./data/elasticsearch
+
+To do:
+change the docker compose file to expose the ports on the honeytrap docker container for some reason the ports arent being exposed 

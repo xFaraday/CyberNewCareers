@@ -1,12 +1,20 @@
 [listener]
 type="socket"
 
+[service.http]
+type="http"
+server="Apache"
+
+[[port]]
+port="tcp/80"
+services=["http"]
+
 [service.ssh-simulator]
 type="ssh-simulator"
 credentials=["root:root", "root:password"]
 
 [[port]]
-port="tcp/8022"
+port="tcp/8080"
 services=["ssh-simulator"]
 
 [service.telnet]
@@ -14,7 +22,7 @@ type="telnet"
 prompt=">>"
 
 [[port]]
-port="tcp/5900"
+port="tcp/23"
 services=["telnet"]
 
 [channel.console]

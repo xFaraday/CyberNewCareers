@@ -43,10 +43,11 @@ services:
     container_name: honeytrap
     ports:
       - "1339:1339"
+      - "80:80"
+      - "23:23"
+      - "8080:8080"
     volumes:
       - ./config.toml:/config/config.toml
-    # Keep trying to start HoneyTrap. HoneyTrap will exit when Elastic is not ready.
-    # Healthcheck condition in depends_on has been deprecated after version 2.1
     restart: on-failure
     depends_on:
       - elasticsearch

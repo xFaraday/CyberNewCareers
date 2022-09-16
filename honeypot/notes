@@ -1,10 +1,30 @@
-make sure to change permissions on elasticsearch directory 
+Commands to run:
 
-original:
-sudo mkdir -p /data/elasticsearch/data && sudo chown -R 1000:1000 /data/elasticsearch
+1.
+sudo snap install docker
 
-Modified:
+2.
+mkdir honeytrap; cd honeytrap
+
+3.
+docker network create honeytrap
+
+4.
 sudo mkdir -p ./data/elasticsearch/data && sudo chown -R 1000:1000 ./data/elasticsearch
 
-To do:
-change the docker compose file to expose the ports on the honeytrap docker container for some reason the ports arent being exposed 
+5.
+sudo sysctl -w vm.max_map_count=262144
+
+6.
+wget https://raw.githubusercontent.com/xFaraday/CyberNewCareers/main/honeypot/config.toml
+
+7.
+wget https://raw.githubusercontent.com/xFaraday/CyberNewCareers/main/honeypot/docker-compose.yml
+
+8.
+docker-compose -f docker-compose-honeytrap-playground.yml up -d
+
+
+wait a little while for startup...
+9.
+ssh -L 5601:127.0.0.1:5601 user@CLOUDIP

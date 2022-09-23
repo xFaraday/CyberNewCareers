@@ -1,30 +1,43 @@
 Commands to run:
 
+installing docker
 1.
 sudo snap install docker
 
+making a workspace for our honeypot
 2.
 mkdir honeytrap; cd honeytrap
 
+create a docker network for the honeypot system
 3.
 docker network create honeytrap
 
+make elasticsearch directory
 4.
 sudo mkdir -p ./data/elasticsearch/data && sudo chown -R 1000:1000 ./data/elasticsearch
 
+increasing docker limits
 5.
 sudo sysctl -w vm.max_map_count=262144
 
+get config file
 6.
 wget https://raw.githubusercontent.com/xFaraday/CyberNewCareers/main/honeypot/config.toml
 
+get other config file
 7.
 wget https://raw.githubusercontent.com/xFaraday/CyberNewCareers/main/honeypot/docker-compose.yml
 
+start up the docker honeypot system
 8.
 docker-compose -f docker-compose-honeytrap-playground.yml up -d
 
+generate keys on your LOCAL system, not the cloud terminal.
+Then import your public key into the google cloud VM.
+9.
+ssh-keygen
 
 wait a little while for startup...
-9.
+this command allows you to browse to http://localhost:5601 to view the honeypot data
+10.
 ssh -L 5601:127.0.0.1:5601 user@CLOUDIP

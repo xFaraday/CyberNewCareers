@@ -1,7 +1,7 @@
 # Cyber Threat Intelligence
 ## Subproject Honeypot
 
-The files listed in this directory are capable of spinning up a preconfigured honeypot with HoneyTrap![https://github.com/honeytrap/honeytrap] and an ELK stack.
+The files listed in this directory are capable of spinning up a preconfigured honeypot with [HoneyTrap](https://github.com/honeytrap/honeytrap) and an ELK stack.
 
 Files:
 - config.toml | Config file for HoneyTrap

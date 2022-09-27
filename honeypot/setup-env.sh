@@ -22,7 +22,7 @@ sleep 1
 #getting docker
 which docker || snap install docker
 
-mkdir honepot; cd honeypot
+mkdir honeypot; cd honeypot
 
 #create docker network
 docker network create honeytrap

@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
         printf("\tToo many arguments. Please just state your name for the scoreboard and nothing else.\n");
         exit(0);
     } else {
-        printf("State your name for the scoreboard.\n\tEx: ./king xfaraday");
+        printf("State your name for the scoreboard. ALL LOWER CASE\n\tEx: ./king xfaraday");
         exit(0);
     }
 
